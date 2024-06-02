@@ -56,6 +56,11 @@ public class ItemServiceImpl extends ServiceImpl<ItemMapper, ItemEntity> impleme
             throw new BizException(StrUtil.format("项目名 {} 已存在！", itemUpsertDTO.getName()));
         }
 
+        ItemEntity item1 = lambdaQuery().eq(ItemEntity::getCode, itemUpsertDTO.getCode()).one();
+        if (ObjectUtil.isNotNull(item1)) {
+            throw new BizException(StrUtil.format("项目编码 {} 已存在！", itemUpsertDTO.getCode()));
+        }
+
         ItemEntity item = BeanUtil.toBean(itemUpsertDTO, ItemEntity.class, CopyOptions.create().ignoreNullValue());
         boolean save = this.save(item);
         if (!save) {
@@ -70,6 +75,11 @@ public class ItemServiceImpl extends ServiceImpl<ItemMapper, ItemEntity> impleme
         ItemEntity i = lambdaQuery().eq(ItemEntity::getName, itemUpsertDTO.getName()).one();
         if (ObjectUtil.notEqual(i, item)) {
             throw new BizException(StrUtil.format("项目名 {} 已存在！", itemUpsertDTO.getName()));
+        }
+
+        ItemEntity item1 = lambdaQuery().eq(ItemEntity::getCode, itemUpsertDTO.getCode()).one();
+        if (ObjectUtil.notEqual(item1, item)) {
+            throw new BizException(StrUtil.format("项目编码 {} 已存在！", itemUpsertDTO.getCode()));
         }
 
         BeanUtil.copyProperties(itemUpsertDTO, item, CopyOptions.create().ignoreNullValue());

@@ -2,7 +2,7 @@ spring:
   application:
     name: nvl-bot
   profiles:
-    active: dev
+    active: sqlite
 
 
 server:
