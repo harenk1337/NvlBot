@@ -5,7 +5,7 @@
 后端 Spring Boot3 + Sqlite + [Shiro](https://github.com/MisakaTAT/Shiro)
 
 前端 Vue3 + Naive UI
-👉[点我跳转前端仓库]()
+👉[点我跳转前端仓库](https://github.com/harenk1337/NvlBot-Admin)
 
 OneBot实现: [NapCatQQ](https://github.com/NapNeko/NapCatQQ)
 
