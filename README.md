@@ -175,6 +175,8 @@ docker-compose up -d && docker logs -f napcat
 
 [http://127.0.0.1:1337/](http://127.0.0.1:1337/)
 
+**默认账号密码都是 `admin`**
+
 <details>
 <summary>后台管理页面</summary>
 
