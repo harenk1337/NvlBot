@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    url: jdbc:sqlite:database.db
+    driver-class-name: org.sqlite.JDBC
+
+bot:
+  type: sqlite
+
+springdoc:
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+
+knife4j:
+  enable: true
+  basic:
+    enable: true
+    username: admin
+    password: admin
+  setting:
+    language: zh_cn
+    enable-open-api: true
+
+sa-token:
+  token-name: Authorization
+  timeout: 86400
+  active-timeout: -1
+  is-concurrent: false
+  is-share: false
+  token-style: tik
+  is-log: false

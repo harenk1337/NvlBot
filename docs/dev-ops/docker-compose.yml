@@ -1,0 +1,35 @@
+version: '3.9'
+services:
+  napcat:
+    container_name: napcat
+    image: mlikiowa/napcat-docker:latest
+    environment:
+      ACCOUNT: <QQ号>
+      WSR_ENABLE: true
+      WS_URLS: '["ws://nvl-bot:1337/onebot/v11/ws"]'
+    volumes:
+      - /opt/napcat/config:/usr/src/app/napcat/config
+    ports:
+      - "6099:6099"
+    restart: always
+    depends_on:
+      - bot
+    networks:
+      - nvl-bot
+
+  bot:
+    container_name: nvl-bot
+    image: harenk99/nvl-bot:1.0
+    volumes:
+      - /opt/nvl-bot/database.db:/opt/database.db
+    ports:
+      - "1337:1337"
+    restart: always
+    networks:
+      - nvl-bot
+
+
+networks:
+  nvl-bot:
+    name: nvl-bot
+    driver: bridge

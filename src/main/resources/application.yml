@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: nvl-bot
+  profiles:
+    active: dev
+
+
+server:
+  port: 1337
+
+shiro:
+  ws:
+    server:
+      enable: true
+      url: "/onebot/v11/ws"
+  interceptor: xyz.harenk.nvl.bot.interceptor.MyInterceptor
