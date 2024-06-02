@@ -17,7 +17,7 @@ OneBot实现: [NapCatQQ](https://github.com/NapNeko/NapCatQQ)
 
 参考 [NapCatQQ 使用文档](https://napneko.github.io/zh-CN/guide/getting-started) 安装 NapCatQQ
 
-**注意：** urls里配置的 127.0.0.1 改为你部署本项目的服务器 IP, 如果 NapCatQQ 和本项目部署在同一服务器下则不用修改。
+**注意：** urls里配置的 `127.0.0.1` 改为你部署本项目的服务器 IP, 如果 NapCatQQ 和本项目部署在同一服务器下则不用修改。
 <details>
 <summary>NapCatQQ 配置如下</summary>
 
