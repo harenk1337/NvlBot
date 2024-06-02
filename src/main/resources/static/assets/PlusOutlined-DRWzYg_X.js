@@ -1,0 +1,1 @@
+import{g as e,o as t,X as n,f as o}from"./index-CxeEYQK2.js";const s={xmlns:"http://www.w3.org/2000/svg","xmlns:xlink":"http://www.w3.org/1999/xlink",viewBox:"0 0 24 24"},l=o("path",{d:"M19 12.998h-6v6h-2v-6H5v-2h6v-6h2v6h6z",fill:"currentColor"},null,-1),r=[l],d=e({name:"PlusOutlined",render:function(h,i){return t(),n("svg",s,r)}});export{d as P};
