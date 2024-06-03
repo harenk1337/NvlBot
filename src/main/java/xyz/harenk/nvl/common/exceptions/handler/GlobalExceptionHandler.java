@@ -16,7 +16,7 @@ import xyz.harenk.nvl.admin.domain.R;
 @Slf4j
 @RestControllerAdvice
 public class GlobalExceptionHandler {
-    @ExceptionHandler({NotLoginException.class})
+    @ExceptionHandler(NotLoginException.class)
     public ResponseEntity<R<String>> unauthorized(NotLoginException e){
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(R.fail(401, "未登录，无权访问!"));
     }

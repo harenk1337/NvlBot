@@ -4,6 +4,8 @@ import cn.dev33.satoken.SaManager;
 import cn.dev33.satoken.context.SaHolder;
 import cn.dev33.satoken.filter.SaServletFilter;
 import cn.dev33.satoken.interceptor.SaInterceptor;
+import cn.dev33.satoken.router.SaHttpMethod;
+import cn.dev33.satoken.router.SaRouter;
 import cn.dev33.satoken.stp.StpUtil;
 import cn.dev33.satoken.util.SaResult;
 import org.springframework.context.annotation.Bean;
@@ -45,6 +47,9 @@ public class SaTokenConfig implements WebMvcConfigurer {
                             .setHeader("Access-Control-Allow-Headers", "*")
                             // 有效时间
                             .setHeader("Access-Control-Max-Age", "3600");
+                    SaRouter.match(SaHttpMethod.OPTIONS)
+                            .free(r -> System.out.println("--------OPTIONS预检请求，不做处理"))
+                            .back();
                 });
     }
 
